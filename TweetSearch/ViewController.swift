@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController {
     
     var username: String = ""
     var words: String = ""
-    var tweetSearchURL: String = ""
+    
 
     @IBOutlet weak var usernameTextfield: UITextField!
     @IBOutlet weak var wordTextfield: UITextField!
@@ -27,11 +28,14 @@ class ViewController: UIViewController {
         username = (usernameTextfield.text?.lowercased())!
         words = (wordTextfield.text?.lowercased())!
         
-        tweetSearchURL = "https://www.twitter.com/search?q=\(words)%20from:\(username)"
+        let tweetSearchURL: URL = URL(string: "https://www.twitter.com/search?q=\(words)%20from:\(username)")!
         
-        if let url = URL(string: tweetSearchURL) {
-            UIApplication.shared.open(url, options: [:])
-        }
+//        if let url = tweetSearchURL {
+//            UIApplication.shared.open(url, options: [:])
+//        }
+        
+        let safariVC = SFSafariViewController(url: tweetSearchURL)
+        present(safariVC, animated: true, completion: nil)
     }
     
 }
