@@ -50,6 +50,9 @@
                                         <state key="normal" title="Search">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="searchBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vp4-uO-vUr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -68,6 +71,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="usernameTextfield" destination="Uik-eb-7lA" id="r6b-uG-wtx"/>
+                        <outlet property="wordTextfield" destination="n6D-zk-NW7" id="Cc5-Ta-irO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
